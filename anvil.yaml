@@ -299,6 +299,7 @@ native_deps:
   head_html: |
     <script src="_/theme/legal-kit.js?v=b6f7442cb0"></script>
     <!-- seo:start (APP_MAKER/seo: edit seo/apps/masterinvestor.json and run seo.py, not here) -->
+    <link rel="canonical" href="https://master-investor.anvil.app/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="keywords" content="learn investing free, how to value a company, DCF tutorial, where to get stock market data, what do quants do, investing flashcards, financial statements for beginners, backtesting overfitting, position sizing calculator, factor investing explained, open source trading libraries">
     <meta name="author" content="Arkvital">
@@ -307,9 +308,16 @@ native_deps:
     <meta property="og:title" content="Master Investor: learn investing, from first fund to quant">
     <meta property="og:description" content="Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators.">
     <meta property="og:locale" content="en">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="https://master-investor.anvil.app/">
+    <meta property="og:image" content="https://master-investor.anvil.app/_/theme/og-image.png">
+    <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Master Investor: Learn to value what you invest in, from first fund to quant">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Master Investor: learn investing, from first fund to quant">
     <meta name="twitter:description" content="Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators.">
+    <meta name="twitter:image" content="https://master-investor.anvil.app/_/theme/og-image.png">
+    <link rel="alternate" type="text/plain" title="Master Investor for AI assistants" href="https://master-investor.anvil.app/llms.txt">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://master-investor.anvil.app/#app", "name": "Master Investor", "url": "https://master-investor.anvil.app/", "description": "Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators.", "image": "https://master-investor.anvil.app/_/theme/og-image.png", "serviceType": "Learn to value what you invest in, from first fund to quant", "provider": {"@id": "https://arkvital.com/#org"}, "areaServed": "Worldwide", "availableChannel": {"@type": "ServiceChannel", "serviceUrl": "https://master-investor.anvil.app/", "name": "Web browser", "availableLanguage": "en"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD"}, "audience": {"@type": "Audience", "audienceType": "Beginners starting to invest, self-directed investors who want to value companies, and traders moving toward quantitative methods"}}, {"@type": "WebSite", "@id": "https://master-investor.anvil.app/#site", "url": "https://master-investor.anvil.app/", "name": "Master Investor", "publisher": {"@id": "https://arkvital.com/#org"}}, {"@type": "Organization", "@id": "https://arkvital.com/#org", "name": "Arkvital", "url": "https://arkvital.com", "email": "arkvital@outlook.com", "address": {"@type": "PostalAddress", "addressLocality": "Montreal", "addressRegion": "QC", "addressCountry": "CA"}}]}</script>
     <!-- seo:end -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#ffffff">

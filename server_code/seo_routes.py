@@ -69,7 +69,7 @@ SEO = {
   ]
  ],
  "free": True,
- "site": "",
+ "site": "https://master-investor.anvil.app",
  "updated": "2026-11-14",
  "icon": "icon-512.png",
  "colors": {
