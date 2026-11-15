@@ -7,7 +7,7 @@ For beginners and advanced traders alike. Built on [Anvil](https://anvil.works) 
 templates, a layout, custom components, RepeatingPanels). Look: white like a spreadsheet, green like money.
 
 - **App repo:** github.com/arkulinskis/master-investor (branch `master`). Anvil pulls `master`.
-- **Live:** not published yet (planned: masterinvestor.anvil.app)
+- **Live:** https://master-investor.anvil.app
 
 ## What it does
 

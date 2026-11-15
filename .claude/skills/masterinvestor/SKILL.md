@@ -12,7 +12,7 @@ sources, GitHub repos, books), Glossary, Today (member dashboard). Everything bu
 
 **Where it lives:**
 - Folder `C:\Users\arkvi\Documents\CLAUDE\master-investor\` = the git clone of **github.com/arkulinskis/master-investor**, branch `master`.
-  "git" layout: the folder *is* the Anvil app. Anvil pulls master; pushing is the deploy. Live: not published yet (planned masterinvestor.anvil.app).
+  "git" layout: the folder *is* the Anvil app. Anvil pulls master; pushing is the deploy. Live: https://master-investor.anvil.app (editor: https://anvil.works/build/apps/YPLTPBVTOLKJQXH2).
 - Made from `C:\Users\arkvi\Documents\CLAUDE\APP_MAKER\template-forms` (native Anvil Forms, Nov 2026). Anvil's own agent
   skills describe the same model: `client-forms`, `data-models`, `server-code`, `client-modules`, `anvil-yaml`
   (github.com/anvil-works/anvil-agent-references; see APP_MAKER/ANVIL_NOTES.md, "Native Anvil Forms").
@@ -170,8 +170,7 @@ tools/                     check.py, assets.py, build_icons.py, make_icons.py, u
 - Placement maths: all Beginner + Intermediate right (6/12) recommends **Advanced** (first level under 2 of 3).
 - Anvil Labels carry an inline `text-align: left`: number cells use `!important` right alignment (end of app.css).
 - `calc.wire` only adds `pressed_enter` to TextBoxes (a TextArea raises on it).
-- Prepsto: claude@claude.com is at the 60-link limit, so `__PREPSTO_CODE__` is still in anvil.yaml, state.py and the
-  Shell footer (check.py's placeholder check fails until a link exists).
+- Prepsto link `cumg2kz` (made 2026-11-14 once Prepsto's limit went to 100 links): anvil.yaml, state.py, Shell footer.
 
 - The local App Server (1.18) lags hosted Anvil: no `HtmlComponent.attrs` (use state.set_attr), `Notification(role=)`
   raises (state.toast falls back), notifications are `.anvil-alert[data-notify]`, components are wrapped in
