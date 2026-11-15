@@ -291,14 +291,26 @@ db_schema:
     server: full
     title: Users
 metadata:
-  description: 'Learn investing from your first index fund to how quants work: short lessons, answers you reveal when ready,
-    calculators and a data library. Free.'
-  logo_img: asset:icon-512.png
-  title: Master Investor
+  description: "Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators."
+  logo_img: "asset:icon-512.png"
+  title: "Master Investor: learn investing, from first fund to quant"
 name: Master Investor
 native_deps:
   head_html: |
     <script src="_/theme/legal-kit.js?v=6cb8683024"></script>
+    <!-- seo:start (APP_MAKER/seo: edit seo/apps/masterinvestor.json and run seo.py, not here) -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="keywords" content="learn investing free, how to value a company, DCF tutorial, where to get stock market data, what do quants do, investing flashcards, financial statements for beginners, backtesting overfitting, position sizing calculator, factor investing explained, open source trading libraries">
+    <meta name="author" content="Arkvital">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Master Investor">
+    <meta property="og:title" content="Master Investor: learn investing, from first fund to quant">
+    <meta property="og:description" content="Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators.">
+    <meta property="og:locale" content="en">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Master Investor: learn investing, from first fund to quant">
+    <meta name="twitter:description" content="Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators.">
+    <!-- seo:end -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
