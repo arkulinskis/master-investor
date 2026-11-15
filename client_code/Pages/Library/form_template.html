@@ -1,0 +1,31 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-library">
+      <div class="ui-page-head">
+        <div>
+          <anvil-component type="Label" name="title" prop:text="Library" prop:role='["page-title"]'></anvil-component>
+          <p class="muted lb-intro">Where the data comes from, the open-source code people use to analyse it, and the books worth your time. Free and paid, beginner to pro.</p>
+        </div>
+      </div>
+      <div class="lb-tools">
+        <div class="ui-seg" role="group" aria-label="Show">
+          <anvil-component type="Button" name="tab_sources" prop:text="Data sources" prop:role='["seg", "on"]'></anvil-component>
+          <anvil-component type="Button" name="tab_repos" prop:text="GitHub repos" prop:role='["seg"]'></anvil-component>
+          <anvil-component type="Button" name="tab_books" prop:text="Books" prop:role='["seg"]'></anvil-component>
+        </div>
+        <label class="ui-field lb-kind"><span class="ui-sr">Kind</span><anvil-component type="DropDown" name="kind_drop"></anvil-component></label>
+        <label class="ui-field lb-search"><span class="ui-sr">Search the library</span>
+          <anvil-component type="TextBox" name="search_box" prop:placeholder="Search" prop:type="search"></anvil-component>
+        </label>
+      </div>
+      <anvil-component type="Label" name="count" prop:role='["fine-print", "lb-count"]'></anvil-component>
+      <anvil-component type="Label" name="repo_note" prop:text="Open-source code changes fast: check a repository's licence, last commit and open issues before you rely on it, and never trust a backtest you haven't checked." prop:role='["msg-note"]'></anvil-component>
+      <anvil-component type="RepeatingPanel" name="items_panel" prop:item_template="Master_Investor.Items.LibItem" prop:role='["lib-grid"]'></anvil-component>
+      <div class="ui-empty" anvil:name="empty">
+        <i class="ic ic-search"></i>
+        <h2>Nothing matches</h2>
+        <p>Try another word, or pick "Every kind".</p>
+      </div>
+    </div>
+  </anvil-block>
+</anvil-form>

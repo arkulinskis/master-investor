@@ -1,0 +1,74 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-lesson">
+      <nav class="mi-crumbs" aria-label="Breadcrumb"><a href="#learn">Learn</a><span aria-hidden="true">/</span><a href="#learn" anvil:name="track_link"><anvil-component type="Label" name="track_label" prop:role='["crumb-link"]'></anvil-component></a></nav>
+      <div anvil:name="found" class="ls-layout">
+        <article class="ls-main">
+          <header class="ls-head">
+            <div class="ls-tags">
+              <anvil-component type="Label" name="level" prop:role='["badge", "badge-brand"]'></anvil-component>
+              <anvil-component type="Label" name="meta" prop:role='["fine-print"]'></anvil-component>
+              <anvil-component type="Label" name="done_badge" prop:text="Done" prop:role='["badge", "badge-good"]'></anvil-component>
+            </div>
+            <anvil-component type="Label" name="title" prop:role='["ls-title"]'></anvil-component>
+            <anvil-component type="Label" name="summary" prop:role='["ls-lead"]'></anvil-component>
+          </header>
+          <anvil-component type="RichText" name="body" prop:format="markdown" prop:enable_slots="false" prop:role='["ls-body"]'></anvil-component>
+
+          <section class="ls-example" anvil:name="example_box" aria-labelledby="ls-ex-h">
+            <div class="ls-example-head"><i class="ic ic-calc"></i><h2 id="ls-ex-h" class="ls-h2">Worked example</h2></div>
+            <anvil-component type="Label" name="example_title" prop:role='["ls-ex-title"]'></anvil-component>
+            <anvil-component type="RichText" name="example_body" prop:format="markdown" prop:enable_slots="false" prop:role='["ls-body", "ls-ex-body"]'></anvil-component>
+          </section>
+
+          <a class="ls-calc" href="#tools" anvil:name="calc_link"><i class="ic ic-calc"></i><anvil-component type="Label" name="calc_label" prop:role='["ls-calc-text"]'></anvil-component><i class="ic ic-arrow"></i></a>
+
+          <section class="ls-check" aria-labelledby="ls-check-h">
+            <div class="ui-row between ls-check-head">
+              <div>
+                <h2 id="ls-check-h" class="ls-h2">Check yourself</h2>
+                <p class="muted small ls-check-sub">Answer in your head, then reveal. Be honest: "Not yet" brings a card back sooner.</p>
+              </div>
+              <div class="ui-row">
+                <anvil-component type="Button" name="reveal_all_button" prop:text="Reveal all" prop:role='["btn", "btn-sm", "ic-eye"]'></anvil-component>
+                <anvil-component type="Button" name="practice_button" prop:text="Practise one at a time" prop:role='["btn", "btn-sm", "ic-cards"]'></anvil-component>
+              </div>
+            </div>
+            <anvil-component type="RepeatingPanel" name="cards_panel" prop:item_template="Master_Investor.Items.RevealCard" prop:role='["card-list"]'></anvil-component>
+            <anvil-component type="Label" name="score" prop:role='["ls-score"]' prop:visible="false"></anvil-component>
+          </section>
+
+          <div class="ls-finish">
+            <div anvil:name="member_finish" class="ui-row">
+              <anvil-component type="Button" name="done_button" prop:text="Mark lesson as done" prop:role='["btn", "btn-primary", "ic-check"]'></anvil-component>
+              <anvil-component type="Button" name="save_button" prop:text="Save for later" prop:role='["btn", "ic-star"]'></anvil-component>
+            </div>
+            <p anvil:name="guest_finish" class="ls-guest"><a href="#auth/signup">Create a free account</a> to tick off lessons, keep a review schedule for the cards and see your streak.</p>
+          </div>
+
+          <nav class="tk-pager" aria-label="Lessons">
+            <a class="tk-prev" href="#learn" anvil:name="prev_link"><i class="ic ic-back"></i><anvil-component type="Label" name="prev_label" prop:role='["pager-text"]'></anvil-component></a>
+            <a class="tk-next" href="#learn" anvil:name="next_link"><anvil-component type="Label" name="next_label" prop:role='["pager-text"]'></anvil-component><i class="ic ic-arrow"></i></a>
+          </nav>
+        </article>
+
+        <aside class="ls-side">
+          <section class="ls-terms" aria-labelledby="ls-terms-h">
+            <h2 id="ls-terms-h" class="ls-h3">Key terms</h2>
+            <anvil-component type="RepeatingPanel" name="terms_panel" prop:item_template="Master_Investor.Items.TermRow" prop:role='["term-list"]'></anvil-component>
+          </section>
+          <section class="ls-links" anvil:name="links_box" aria-labelledby="ls-links-h">
+            <h2 id="ls-links-h" class="ls-h3">Go further</h2>
+            <anvil-component type="RepeatingPanel" name="links_panel" prop:item_template="Master_Investor.Items.LinkRow" prop:role='["link-list"]'></anvil-component>
+          </section>
+          <p class="ls-disclaimer small muted">Education only, not financial advice. Examples use made-up companies and numbers.</p>
+        </aside>
+      </div>
+      <div class="ui-empty" anvil:name="missing">
+        <i class="ic ic-book"></i>
+        <h2>That lesson isn't here</h2>
+        <p>It may have moved. <a href="#learn">Search all lessons</a>.</p>
+      </div>
+    </div>
+  </anvil-block>
+</anvil-form>

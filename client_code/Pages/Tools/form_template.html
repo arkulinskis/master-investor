@@ -1,0 +1,29 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-tools">
+      <div class="ui-page-head">
+        <div>
+          <anvil-component type="Label" name="title" prop:text="Calculators" prop:role='["page-title"]'></anvil-component>
+          <p class="muted">Seven small spreadsheets for the maths in the lessons. Change any cell and the results update.</p>
+        </div>
+      </div>
+      <div class="tl-tabs" role="group" aria-label="Calculator">
+        <anvil-component type="Button" name="t_compound" prop:text="Compound growth" prop:role='["seg"]'></anvil-component>
+        <anvil-component type="Button" name="t_dcf" prop:text="DCF value" prop:role='["seg"]'></anvil-component>
+        <anvil-component type="Button" name="t_bond" prop:text="Bond price" prop:role='["seg"]'></anvil-component>
+        <anvil-component type="Button" name="t_options" prop:text="Option payoff" prop:role='["seg"]'></anvil-component>
+        <anvil-component type="Button" name="t_sharpe" prop:text="Sharpe ratio" prop:role='["seg"]'></anvil-component>
+        <anvil-component type="Button" name="t_position" prop:text="Position size" prop:role='["seg"]'></anvil-component>
+        <anvil-component type="Button" name="t_kelly" prop:text="Kelly" prop:role='["seg"]'></anvil-component>
+      </div>
+      <div class="tl-panel">
+        <div class="tl-head">
+          <anvil-component type="Label" name="calc_title" prop:role='["sec-title"]'></anvil-component>
+          <a class="tl-lesson" href="#learn" anvil:name="lesson_link"><i class="ic ic-book"></i><anvil-component type="Label" name="lesson_label" prop:role='["tl-lesson-text"]'></anvil-component></a>
+        </div>
+        <anvil-component type="LinearPanel" name="holder"></anvil-component>
+      </div>
+      <p class="small muted tl-note">Results are only as good as the numbers you put in. Education only, not financial advice.</p>
+    </div>
+  </anvil-block>
+</anvil-form>

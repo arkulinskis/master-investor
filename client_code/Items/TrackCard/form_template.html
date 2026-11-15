@@ -1,0 +1,13 @@
+<a class="tc-card" href="#learn">
+  <div class="tc-top">
+    <span class="tc-ic"><i class="ic" anvil:name="icon"></i></span>
+    <anvil-component type="Label" name="num" prop:role='["tc-num"]'></anvil-component>
+    <anvil-component type="Label" name="level" prop:role='["badge", "badge-brand"]' bind:text="self.item['level']"></anvil-component>
+  </div>
+  <anvil-component type="Label" name="title" prop:role='["tc-title"]' bind:text="self.item['title']"></anvil-component>
+  <anvil-component type="Label" name="blurb" prop:role='["tc-blurb"]' bind:text="self.item['blurb']"></anvil-component>
+  <div class="tc-foot">
+    <anvil-component type="Label" name="meta" prop:role='["fine-print", "tc-meta"]'></anvil-component>
+    <div class="mi-bar" anvil:name="bar"><span class="mi-bar-fill" anvil:name="fill"></span></div>
+  </div>
+</a>

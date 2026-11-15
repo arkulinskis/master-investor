@@ -1,0 +1,23 @@
+<div class="rv">
+  <div class="rv-q">
+    <span class="rv-fx" aria-hidden="true">fx</span>
+    <div class="rv-q-body">
+      <anvil-component type="Label" name="meta" prop:role='["rv-meta"]'></anvil-component>
+      <anvil-component type="Label" name="question" prop:role='["rv-question"]' bind:text="self.item['q']"></anvil-component>
+    </div>
+  </div>
+  <div class="rv-a">
+    <div class="rv-cover" anvil:name="cover">
+      <anvil-component type="Button" name="reveal_button" prop:text="Reveal answer" prop:role='["btn", "rv-reveal", "ic-eye"]'></anvil-component>
+    </div>
+    <div class="rv-answer" anvil:name="answer_box">
+      <anvil-component type="Label" name="answer" prop:role='["rv-answer-text"]' bind:text="self.item['a']"></anvil-component>
+      <div class="rv-grade" anvil:name="grade">
+        <span class="rv-ask">Did you know it?</span>
+        <anvil-component type="Button" name="not_yet_button" prop:text="Not yet" prop:role='["btn", "btn-sm", "rv-no"]'></anvil-component>
+        <anvil-component type="Button" name="got_it_button" prop:text="Got it" prop:role='["btn", "btn-sm", "btn-primary", "ic-check"]'></anvil-component>
+      </div>
+      <anvil-component type="Label" name="graded" prop:role='["rv-graded"]' prop:visible="false"></anvil-component>
+    </div>
+  </div>
+</div>

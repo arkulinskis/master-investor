@@ -1,0 +1,40 @@
+---
+custom_component: true
+properties: []
+toolbox_item:
+  title: Sheet hero
+  group: Master Investor
+help_text: |
+  The landing page's spreadsheet: a small DCF with the answer cell hidden until the visitor presses Reveal.
+---
+<div class="sx">
+  <div class="sx-sheet" role="group" aria-label="A small company valuation, as a spreadsheet">
+    <div class="sx-bar">
+      <span class="sx-name">B8</span>
+      <span class="sx-fx" aria-hidden="true">fx</span>
+      <span class="sx-formula">=DCF(B2:B7) / B7</span>
+    </div>
+    <div class="sx-grid">
+      <div class="sx-r sx-head"><span class="sx-n"></span><span class="sx-c">A</span><span class="sx-c">B</span></div>
+      <div class="sx-r sx-title"><span class="sx-n">1</span><span class="sx-c">Harbour Mills</span><span class="sx-c sx-unit">millions</span></div>
+      <div class="sx-r"><span class="sx-n">2</span><span class="sx-c">Free cash flow, last year</span><span class="sx-c sx-v">120.0</span></div>
+      <div class="sx-r"><span class="sx-n">3</span><span class="sx-c">Growth, years 1 to 5</span><span class="sx-c sx-v">6.0%</span></div>
+      <div class="sx-r"><span class="sx-n">4</span><span class="sx-c">Discount rate</span><span class="sx-c sx-v">9.0%</span></div>
+      <div class="sx-r"><span class="sx-n">5</span><span class="sx-c">Growth after year 5</span><span class="sx-c sx-v">2.5%</span></div>
+      <div class="sx-r"><span class="sx-n">6</span><span class="sx-c">Net debt</span><span class="sx-c sx-v">200.0</span></div>
+      <div class="sx-r"><span class="sx-n">7</span><span class="sx-c">Shares</span><span class="sx-c sx-v">40.0</span></div>
+      <div class="sx-r sx-key"><span class="sx-n">8</span><span class="sx-c sx-q">Value per share?</span>
+        <span class="sx-c sx-v sx-answer">
+          <span class="sx-hidden" anvil:name="cover"><anvil-component type="Button" name="reveal_button" prop:text="Reveal" prop:role='["btn", "btn-primary", "btn-sm", "sx-reveal", "ic-eye"]'></anvil-component></span>
+          <span class="sx-shown" anvil:name="value_box"><anvil-component type="Label" name="value" prop:text="49.95" prop:role='["sx-value"]'></anvil-component></span>
+        </span>
+      </div>
+      <div class="sx-r"><span class="sx-n">9</span><span class="sx-c">Share price today</span><span class="sx-c sx-v">38.00</span></div>
+      <div class="sx-r sx-after" anvil:name="after_row"><span class="sx-n">10</span><span class="sx-c">Margin of safety</span><span class="sx-c sx-v sx-good">24%</span></div>
+    </div>
+  </div>
+  <div class="sx-note" anvil:name="note">
+    <p><b>The value is about 49.95 a share,</b> so at 38 the shares trade 24% below it, if the assumptions hold. The DCF lesson walks through every cell.</p>
+    <div class="sx-links"><a href="#lesson/dcf">Read the DCF lesson <i class="ic ic-arrow"></i></a><a href="#tools/dcf">Change the numbers <i class="ic ic-calc"></i></a></div>
+  </div>
+</div>

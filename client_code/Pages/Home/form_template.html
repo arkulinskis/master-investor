@@ -1,0 +1,56 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-home">
+      <div class="ui-page-head">
+        <div>
+          <anvil-component type="Label" name="hello" prop:text="Today" prop:role='["page-title"]'></anvil-component>
+          <anvil-component type="Label" name="sub" prop:role='["fine-print"]'></anvil-component>
+        </div>
+      </div>
+      <div class="hm-top">
+        <section class="hm-due ui-card">
+          <div class="hm-due-text">
+            <anvil-component type="Label" name="due_num" prop:role='["hm-big"]'></anvil-component>
+            <anvil-component type="Label" name="due_text" prop:role='["hm-due-words"]'></anvil-component>
+          </div>
+          <anvil-component type="Button" name="due_button" prop:text="Review cards" prop:role='["btn", "btn-primary", "btn-lg", "ic-cards"]'></anvil-component>
+        </section>
+        <section class="hm-next ui-card" anvil:name="next_box">
+          <anvil-component type="Label" name="next_k" prop:text="Next lesson" prop:role='["hm-k"]'></anvil-component>
+          <anvil-component type="Label" name="next_title" prop:role='["hm-next-title"]'></anvil-component>
+          <anvil-component type="Label" name="next_meta" prop:role='["fine-print"]'></anvil-component>
+          <anvil-component type="Button" name="next_button" prop:text="Read it" prop:role='["btn", "ic-arrow"]'></anvil-component>
+        </section>
+        <section class="hm-next ui-card" anvil:name="all_done_box">
+          <anvil-component type="Label" name="all_done" prop:text="You've finished every lesson. Keep the cards fresh with your reviews." prop:role='["hm-next-title"]'></anvil-component>
+        </section>
+      </div>
+
+      <div class="hm-grid">
+        <section class="ui-card hm-week">
+          <div class="ui-row between"><h2 class="hm-h">This week</h2><anvil-component type="Label" name="streak" prop:role='["badge", "badge-good", "hm-streak"]'></anvil-component></div>
+          <anvil-component type="RepeatingPanel" name="week_panel" prop:item_template="Master_Investor.Items.DayBar" prop:role='["week-bars"]'></anvil-component>
+          <div class="hm-stats">
+            <div><anvil-component type="Label" name="s_lessons" prop:role='["hm-stat"]'></anvil-component><span>lessons done</span></div>
+            <div><anvil-component type="Label" name="s_seen" prop:role='["hm-stat"]'></anvil-component><span>cards seen</span></div>
+            <div><anvil-component type="Label" name="s_mastered" prop:role='["hm-stat"]'></anvil-component><span>mastered</span></div>
+          </div>
+        </section>
+        <section class="ui-card hm-tracks">
+          <div class="ui-row between"><h2 class="hm-h">Your tracks</h2><a href="#learn" class="small">All lessons</a></div>
+          <anvil-component type="RepeatingPanel" name="tracks_panel" prop:item_template="Master_Investor.Items.TrackProgress" prop:role='["tp-list"]'></anvil-component>
+        </section>
+      </div>
+
+      <section class="hm-saved">
+        <h2 class="hm-h">Saved for later</h2>
+        <anvil-component type="RepeatingPanel" name="saved_panel" prop:item_template="Master_Investor.Items.LessonRow" prop:role='["lesson-list"]'></anvil-component>
+        <div class="ui-empty hm-empty" anvil:name="no_saved">
+          <i class="ic ic-star"></i>
+          <h3>Nothing saved yet</h3>
+          <p>Press "Save for later" at the end of any lesson and it waits here.</p>
+        </div>
+      </section>
+    </div>
+  </anvil-block>
+</anvil-form>

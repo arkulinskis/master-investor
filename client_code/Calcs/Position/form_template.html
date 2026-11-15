@@ -1,0 +1,29 @@
+<div class="cx">
+  <p class="cx-intro">How many shares to buy so that, if your stop is hit, you lose only the slice of the account you chose. Works for short trades too (stop above entry).</p>
+  <div class="cx-grid">
+    <div class="cx-inputs">
+      <label class="ui-field cx-field"><span>Account size</span>
+        <anvil-component type="TextBox" name="account_box" prop:text="50000" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Risk per trade, % of account</span>
+        <anvil-component type="TextBox" name="risk_box" prop:text="1" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">Many traders keep this at 0.5 to 2%.</span>
+      </label>
+      <label class="ui-field cx-field"><span>Entry price</span>
+        <anvil-component type="TextBox" name="entry_box" prop:text="40" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Stop price</span>
+        <anvil-component type="TextBox" name="stop_box" prop:text="37.50" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Target price (optional)</span>
+        <anvil-component type="TextBox" name="target_box" prop:text="46" prop:role='["cx-num"]'></anvil-component>
+      </label>
+    </div>
+    <div class="cx-out">
+      <anvil-component type="Label" name="msg" prop:role='["msg-error"]' prop:visible="false"></anvil-component>
+      <div class="mi-sheet cx-sheet" anvil:name="out_box">
+        <div class="mi-sheet-head"><span>Position size</span><span>Result</span></div>
+        <anvil-component type="RepeatingPanel" name="out_panel" prop:item_template="Master_Investor.Items.SheetRow" prop:role='["sheet-rows"]'></anvil-component>
+      </div>
+    </div>
+  </div>
+</div>

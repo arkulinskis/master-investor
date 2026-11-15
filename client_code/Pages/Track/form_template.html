@@ -1,0 +1,38 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-track">
+      <nav class="mi-crumbs" aria-label="Breadcrumb"><a href="#learn">Learn</a><span aria-hidden="true">/</span><anvil-component type="Label" name="crumb" prop:role='["crumb-here"]'></anvil-component></nav>
+      <div anvil:name="found">
+        <div class="tk-head">
+          <span class="tk-ic"><i class="ic" anvil:name="icon"></i></span>
+          <div class="tk-head-text">
+            <anvil-component type="Label" name="title" prop:role='["page-title"]'></anvil-component>
+            <anvil-component type="Label" name="blurb" prop:role='["tk-blurb"]'></anvil-component>
+            <anvil-component type="Label" name="meta" prop:role='["fine-print"]'></anvil-component>
+          </div>
+        </div>
+        <div class="tk-actions">
+          <anvil-component type="Button" name="start_button" prop:text="Start the track" prop:role='["btn", "btn-primary", "ic-arrow"]'></anvil-component>
+          <anvil-component type="Button" name="practice_button" prop:text="Practise this track" prop:role='["btn", "ic-cards"]'></anvil-component>
+          <div class="tk-progress" anvil:name="progress_box">
+            <div class="mi-bar"><span class="mi-bar-fill" anvil:name="fill"></span></div>
+            <anvil-component type="Label" name="progress_label" prop:role='["fine-print"]'></anvil-component>
+          </div>
+        </div>
+        <div class="mi-sheet">
+          <div class="mi-sheet-head"><span>#</span><span>Lesson</span><span class="mi-hide-sm">Level</span></div>
+          <anvil-component type="RepeatingPanel" name="lessons_panel" prop:item_template="Master_Investor.Items.LessonRow" prop:role='["lesson-list"]'></anvil-component>
+        </div>
+        <div class="tk-pager">
+          <a class="tk-prev" href="#learn" anvil:name="prev_link"><i class="ic ic-back"></i><anvil-component type="Label" name="prev_label" prop:role='["pager-text"]'></anvil-component></a>
+          <a class="tk-next" href="#learn" anvil:name="next_link"><anvil-component type="Label" name="next_label" prop:role='["pager-text"]'></anvil-component><i class="ic ic-arrow"></i></a>
+        </div>
+      </div>
+      <div class="ui-empty" anvil:name="missing">
+        <i class="ic ic-book"></i>
+        <h2>That track isn't here</h2>
+        <p>It may have been renamed. <a href="#learn">See all tracks</a>.</p>
+      </div>
+    </div>
+  </anvil-block>
+</anvil-form>

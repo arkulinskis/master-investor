@@ -1,0 +1,97 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="page-landing">
+      <section class="lp-hero">
+        <div class="ui-wrap">
+          <div class="lp-copy">
+            <h1>Learn to <em>value</em> what you invest in</h1>
+            <p class="lp-lead">Short, clear lessons from your first index fund to how quants build signals. Every lesson ends with questions whose answers stay hidden until you're ready to reveal them.</p>
+            <div class="lp-cta" anvil:name="guest_cta">
+              <a class="ui-btn primary lg" href="#auth/signup">Start learning, free <i class="ic ic-arrow"></i></a>
+              <a class="ui-btn lg" href="#learn">Browse the lessons</a>
+            </div>
+            <div class="lp-cta" anvil:name="member_cta">
+              <a class="ui-btn primary lg" href="#home">Open today's cards <i class="ic ic-arrow"></i></a>
+              <a class="ui-btn lg" href="#learn">Browse the lessons</a>
+            </div>
+            <anvil-component type="Label" name="proof" prop:role='["lp-proof-line"]'></anvil-component>
+          </div>
+          <div class="lp-art">
+            <p class="lp-art-q">What is Harbour Mills worth per share? Try it:</p>
+            <anvil-component type="Master_Investor.Components.SheetHero" name="sheet"></anvil-component>
+          </div>
+        </div>
+      </section>
+
+      <section class="lp-section" id="how">
+        <div class="ui-wrap">
+          <div class="lp-head"><h2>How you learn here</h2><p>The same loop for a first-time saver and a working trader. It takes five to ten minutes a day.</p></div>
+          <ol class="lp-loop">
+            <li><b>Read one short lesson.</b><span>Plain words, one worked example with real-looking numbers, and the key terms in the margin.</span></li>
+            <li><b>Answer before you look.</b><span>Each question hides its answer. Think it through, press Reveal, then say honestly whether you knew it.</span></li>
+            <li><b>Come back when it's due.</b><span>Cards you know return in days, then weeks. Cards you missed return tomorrow. That spacing is what makes it stick.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="lp-section lp-ledger-s">
+        <div class="ui-wrap">
+          <div class="lp-head"><h2>Nine tracks, one ladder</h2><p>Start at the top or jump in where you are. The placement check tells you where.</p></div>
+          <div class="lp-ledger mi-sheet" aria-label="The tracks">
+            <div class="lg-row lg-head" aria-hidden="true"><span class="lg-c lg-n">1</span><span class="lg-c lg-t">Track</span><span class="lg-c lg-l">Level</span><span class="lg-c lg-v">Lessons</span><span class="lg-c lg-v">Cards</span></div>
+            <anvil-component type="RepeatingPanel" name="ledger_panel" prop:item_template="Master_Investor.Items.LedgerRow" prop:role='["contents"]'></anvil-component>
+            <div class="lg-row lg-total"><span class="lg-c lg-n">11</span><span class="lg-c lg-t"><b>Total</b></span><span class="lg-c lg-l"></span><span class="lg-c lg-v"><anvil-component type="Label" name="sum_lessons" prop:role='["lg-text"]'></anvil-component></span><span class="lg-c lg-v"><anvil-component type="Label" name="sum_cards" prop:role='["lg-text"]'></anvil-component></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lp-section">
+        <div class="ui-wrap lp-try">
+          <div class="lp-try-head">
+            <h2>Try three cards</h2>
+            <p>One from the first track, one from valuation, one from the quant's world. No account needed.</p>
+            <a class="ui-btn" href="#practice/placement"><i class="ic ic-target"></i>Or take the 12-card placement check</a>
+          </div>
+          <anvil-component type="RepeatingPanel" name="cards_panel" prop:item_template="Master_Investor.Items.RevealCard" prop:role='["card-list"]'></anvil-component>
+        </div>
+      </section>
+
+      <section class="lp-section">
+        <div class="ui-wrap">
+          <div class="lp-head"><h2>Everything a self-taught investor needs</h2></div>
+          <div class="lp-feats">
+            <div class="lp-feature"><i class="ic ic-scale"></i><h3>How to value a company</h3><p>Statements, ratios, multiples, a full DCF, discount rates, reverse DCF, moats and the awkward cases like banks and REITs.</p></div>
+            <div class="lp-feature"><i class="ic ic-database"></i><h3>Where the data comes from</h3><p>Filings, macro series, prices and terminals, the free APIs and their limits, and the pitfalls that ruin research.</p></div>
+            <div class="lp-feature"><i class="ic ic-flask"></i><h3>What quants actually do</h3><p>Roles, factors, honest backtesting, pairs trading, execution, machine learning and option pricing, explained without the mystique.</p></div>
+            <div class="lp-feature"><i class="ic ic-calc"></i><h3>Seven calculators</h3><p>Compound growth, DCF with a sensitivity grid, bond price and duration, option payoffs, Sharpe and Sortino, position size and Kelly.</p></div>
+            <div class="lp-feature"><i class="ic ic-code"></i><h3>A library of tools</h3><p>Data sources from EDGAR to FRED, open-source GitHub projects for backtesting and portfolios, and the books professionals reread.</p></div>
+            <div class="lp-feature"><i class="ic ic-flame"></i><h3>Progress you can see</h3><p>Lessons ticked off, a review schedule for every card, a daily streak and a glossary of every key term.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lp-section">
+        <div class="ui-wrap">
+          <div class="lp-head"><h2>Questions</h2></div>
+          <div class="lp-faq">
+            <details><summary>Is it free?</summary><p>Yes. Every lesson, card, calculator and the library are free. An account is free too, and only needed to save your progress and review schedule.</p></details>
+            <details><summary>Is this financial advice?</summary><p>No. Master Investor teaches how investing works and how professionals think. It never tells you what to buy or sell, and the examples use made-up companies.</p></details>
+            <details><summary>I'm a complete beginner. Where do I start?</summary><p>With Foundations: what investing is, compounding, risk, fees and how a trade happens. No maths beyond percentages.</p></details>
+            <details><summary>I already trade. Is there anything for me?</summary><p>The Trading, Portfolio and Quant tracks go deep: expectancy and risk of ruin, microstructure, factor models, backtest overfitting, cointegration, execution and Black-Scholes. Take the placement check to skip what you know.</p></details>
+            <details><summary>How does the reveal-and-review work?</summary><p>You see a question, answer it in your head, reveal, then mark Got it or Not yet. Cards you know come back after 1, 3, 7, 16 and 35 days; cards you miss come back sooner.</p></details>
+            <details><summary>Who can see my progress?</summary><p>Only you. We store your finished lessons and card reviews to schedule them, nothing else. The Privacy &amp; Terms page has the details.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="lp-section">
+        <div class="ui-wrap">
+          <div class="lp-band">
+            <div><h2>Your first lesson takes six minutes</h2><p>Start with compounding, or test yourself first and skip what you know.</p></div>
+            <a class="ui-btn lg" href="#auth/signup" anvil:name="band_link">Start learning</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </anvil-block>
+</anvil-form>

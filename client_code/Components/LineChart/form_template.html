@@ -1,0 +1,15 @@
+---
+custom_component: true
+properties:
+  - name: spec
+    type: string
+    default_value: ""
+    description: "The chart as JSON text (series, axis formats; see theme/assets/mi-chart.js)"
+    default_binding_prop: true
+toolbox_item:
+  title: Line chart
+  group: Master Investor
+help_text: |
+  An SVG line or area chart drawn by theme/assets/mi-chart.js. Set spec to JSON text.
+---
+<div class="lc-wrap"><div class="lc" anvil:dom-node="box"></div></div>

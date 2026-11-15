@@ -1,0 +1,12 @@
+<article class="li-item">
+  <div class="li-head">
+    <anvil-component type="Label" name="name" prop:role='["li-name"]' bind:text="self.item['name']"></anvil-component>
+    <div class="li-tags">
+      <anvil-component type="Label" name="kind" prop:role='["badge", "badge-brand"]'></anvil-component>
+      <anvil-component type="Label" name="extra" prop:role='["badge"]'></anvil-component>
+      <anvil-component type="Label" name="level" prop:role='["badge"]' bind:text="self.item.get('level', '')"></anvil-component>
+    </div>
+  </div>
+  <anvil-component type="Label" name="what" prop:role='["li-what"]' bind:text="self.item.get('what', '')"></anvil-component>
+  <a class="li-open" href="https://example.com" target="_blank" rel="noopener" anvil:name="open_link"><anvil-component type="Label" name="url_label" prop:role='["li-url"]'></anvil-component><i class="ic ic-external"></i></a>
+</article>

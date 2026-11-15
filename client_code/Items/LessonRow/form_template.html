@@ -1,0 +1,12 @@
+<a class="lr-row" href="#learn">
+  <span class="lr-num" anvil:name="num_box"><anvil-component type="Label" name="num" prop:role='["lr-num-text"]'></anvil-component></span>
+  <span class="lr-main">
+    <anvil-component type="Label" name="title" prop:role='["lr-title"]' bind:text="self.item['title']"></anvil-component>
+    <anvil-component type="Label" name="summary" prop:role='["lr-summary"]' bind:text="self.item['summary']"></anvil-component>
+    <anvil-component type="Label" name="meta" prop:role='["fine-print"]'></anvil-component>
+  </span>
+  <span class="lr-side">
+    <anvil-component type="Label" name="level" prop:role='["badge"]' bind:text="self.item['level']"></anvil-component>
+    <span class="lr-done" anvil:name="done_mark"><i class="ic ic-check"></i><span class="ui-sr">Done</span></span>
+  </span>
+</a>

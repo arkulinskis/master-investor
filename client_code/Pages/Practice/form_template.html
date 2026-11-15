@@ -1,0 +1,96 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-practice">
+      <div anvil:name="menu_part">
+        <div class="ui-page-head">
+          <div>
+            <anvil-component type="Label" name="title" prop:text="Practice" prop:role='["page-title"]'></anvil-component>
+            <p class="muted pr-intro">One card at a time. Read the question, answer it in your head, then reveal. Mark yourself honestly: cards you know come back in days or weeks, cards you don't come back soon.</p>
+          </div>
+        </div>
+        <div class="pr-due ui-card" anvil:name="due_box">
+          <div>
+            <anvil-component type="Label" name="due_title" prop:role='["pr-due-title"]'></anvil-component>
+            <anvil-component type="Label" name="due_sub" prop:role='["fine-print"]'></anvil-component>
+          </div>
+          <anvil-component type="Button" name="due_button" prop:text="Review now" prop:role='["btn", "btn-primary", "btn-lg", "ic-cards"]'></anvil-component>
+        </div>
+        <div class="pr-guest msg" anvil:name="guest_box">
+          <p><b>Studying as a guest.</b> Every deck works, but nothing is remembered between visits. <a href="#auth/signup">Create a free account</a> and the app schedules each card for you.</p>
+        </div>
+        <div class="pr-grid">
+          <section class="pr-deck">
+            <h2 class="pr-h">Quick decks</h2>
+            <div class="pr-buttons">
+              <anvil-component type="Button" name="mixed_button" prop:text="Mixed: 20 cards from everything" prop:role='["btn", "btn-block", "ic-dice"]'></anvil-component>
+              <anvil-component type="Button" name="placement_button" prop:text="Placement check: where should I start?" prop:role='["btn", "btn-block", "ic-target"]'></anvil-component>
+              <anvil-component type="Button" name="saved_button" prop:text="Cards from my saved lessons" prop:role='["btn", "btn-block", "ic-star"]'></anvil-component>
+            </div>
+          </section>
+          <section class="pr-deck">
+            <h2 class="pr-h">By level</h2>
+            <div class="pr-buttons">
+              <anvil-component type="Button" name="lv_beginner" prop:text="Beginner" prop:role='["btn", "btn-block"]'></anvil-component>
+              <anvil-component type="Button" name="lv_intermediate" prop:text="Intermediate" prop:role='["btn", "btn-block"]'></anvil-component>
+              <anvil-component type="Button" name="lv_advanced" prop:text="Advanced" prop:role='["btn", "btn-block"]'></anvil-component>
+              <anvil-component type="Button" name="lv_pro" prop:text="Pro" prop:role='["btn", "btn-block"]'></anvil-component>
+            </div>
+          </section>
+          <section class="pr-deck">
+            <h2 class="pr-h">By track</h2>
+            <label class="ui-field"><span>Track</span><anvil-component type="DropDown" name="track_drop"></anvil-component></label>
+            <anvil-component type="Button" name="track_button" prop:text="Start this track's deck" prop:role='["btn", "btn-primary", "btn-block", "ic-arrow"]'></anvil-component>
+          </section>
+        </div>
+      </div>
+
+      <div anvil:name="session_part" class="pr-session">
+        <div class="pr-top">
+          <anvil-component type="Label" name="deck_title" prop:role='["pr-deck-title"]'></anvil-component>
+          <anvil-component type="Label" name="progress_label" prop:role='["pr-count"]'></anvil-component>
+          <anvil-component type="Button" name="end_button" prop:text="End" prop:role='["btn", "btn-ghost", "btn-sm", "ic-x"]'></anvil-component>
+        </div>
+        <div class="mi-bar pr-bar"><span class="mi-bar-fill" anvil:name="fill"></span></div>
+        <div class="pr-card" anvil:name="card">
+          <div class="pr-card-bar"><anvil-component type="Label" name="cell_ref" prop:text="A1" prop:role='["pr-cell"]'></anvil-component><span class="rv-fx" aria-hidden="true">fx</span><anvil-component type="Label" name="card_meta" prop:role='["pr-meta"]'></anvil-component></div>
+          <div class="pr-card-body">
+            <anvil-component type="Label" name="question" prop:role='["pr-question"]'></anvil-component>
+            <div class="pr-answer" anvil:name="answer_box">
+              <anvil-component type="Label" name="answer" prop:role='["pr-answer-text"]'></anvil-component>
+              <a class="pr-from small" href="#learn" anvil:name="from_link"><anvil-component type="Label" name="from_label" prop:role='["pr-from-text"]'></anvil-component></a>
+            </div>
+          </div>
+          <div class="pr-actions">
+            <anvil-component type="Button" name="reveal_button" prop:text="Reveal answer" prop:role='["btn", "btn-primary", "btn-lg", "btn-block", "ic-eye"]'></anvil-component>
+            <div class="pr-grade" anvil:name="grade">
+              <anvil-component type="Button" name="no_button" prop:text="Not yet" prop:role='["btn", "btn-lg", "pr-no"]'></anvil-component>
+              <anvil-component type="Button" name="yes_button" prop:text="Got it" prop:role='["btn", "btn-primary", "btn-lg", "ic-check"]'></anvil-component>
+            </div>
+          </div>
+        </div>
+        <p class="pr-keys small muted"><kbd>Space</kbd> reveals · <kbd>1</kbd> not yet · <kbd>2</kbd> got it</p>
+      </div>
+
+      <div anvil:name="done_part" class="pr-done">
+        <div class="pr-result ui-card">
+          <anvil-component type="Label" name="result_title" prop:role='["pr-result-title"]'></anvil-component>
+          <anvil-component type="Label" name="result_score" prop:role='["pr-score"]'></anvil-component>
+          <anvil-component type="Label" name="result_text" prop:role='["pr-result-text"]'></anvil-component>
+          <div class="pr-place" anvil:name="place_box">
+            <anvil-component type="Label" name="place_level" prop:role='["badge", "badge-brand"]'></anvil-component>
+            <anvil-component type="Label" name="place_text" prop:role='["pr-place-text"]'></anvil-component>
+            <anvil-component type="Button" name="place_button" prop:text="Start there" prop:role='["btn", "btn-primary", "ic-arrow"]'></anvil-component>
+          </div>
+          <div class="ui-row">
+            <anvil-component type="Button" name="again_button" prop:text="Go again with the ones I missed" prop:role='["btn", "btn-primary", "ic-refresh"]'></anvil-component>
+            <anvil-component type="Button" name="menu_button" prop:text="Choose another deck" prop:role='["btn", "ic-cards"]'></anvil-component>
+          </div>
+        </div>
+        <section anvil:name="missed_box" class="pr-missed">
+          <h2 class="pr-h">The ones to look at again</h2>
+          <anvil-component type="RepeatingPanel" name="missed_panel" prop:item_template="Master_Investor.Items.RevealCard" prop:role='["card-list"]'></anvil-component>
+        </section>
+      </div>
+    </div>
+  </anvil-block>
+</anvil-form>

@@ -1,0 +1,39 @@
+<div class="cx">
+  <p class="cx-intro">Five years of free cash flow growth, then a terminal value growing forever, discounted back to today and divided by the shares. The defaults are the Harbour Mills example from the front page.</p>
+  <div class="cx-grid">
+    <div class="cx-inputs">
+      <label class="ui-field cx-field"><span>Free cash flow, last year</span>
+        <anvil-component type="TextBox" name="fcf_box" prop:text="120" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">In millions, or any unit: just keep debt in the same unit.</span>
+      </label>
+      <label class="ui-field cx-field"><span>Growth, years 1 to 5, %</span>
+        <anvil-component type="TextBox" name="growth_box" prop:text="6" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Discount rate, %</span>
+        <anvil-component type="TextBox" name="rate_box" prop:text="9" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">Often the WACC: see the Discount rates lesson.</span>
+      </label>
+      <label class="ui-field cx-field"><span>Growth after year 5, %</span>
+        <anvil-component type="TextBox" name="tg_box" prop:text="2.5" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">Keep it at or below long-run economic growth.</span>
+      </label>
+      <label class="ui-field cx-field"><span>Net debt</span>
+        <anvil-component type="TextBox" name="debt_box" prop:text="200" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">Debt minus cash. Negative if the company has net cash.</span>
+      </label>
+      <label class="ui-field cx-field"><span>Shares</span>
+        <anvil-component type="TextBox" name="shares_box" prop:text="40" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Share price today</span>
+        <anvil-component type="TextBox" name="price_box" prop:text="38" prop:role='["cx-num"]'></anvil-component>
+      </label>
+    </div>
+    <div class="cx-out">
+      <anvil-component type="Label" name="msg" prop:role='["msg-error"]' prop:visible="false"></anvil-component>
+      <div class="mi-sheet cx-sheet" anvil:name="out_box">
+        <div class="mi-sheet-head"><span>Discounted cash flow</span><span>Result</span></div>
+        <anvil-component type="RepeatingPanel" name="out_panel" prop:item_template="Master_Investor.Items.SheetRow" prop:role='["sheet-rows"]'></anvil-component>
+      </div>
+      <h3 class="cx-h">The cash flows, year by year</h3>
+      <div class="mi-sheet cx-table">
+        <anvil-component type="RepeatingPanel" name="table_panel" prop:item_template="Master_Investor.Items.SheetRow" prop:role='["sheet-rows"]'></anvil-component>
+      </div>
+    </div>
+  </div>
+</div>

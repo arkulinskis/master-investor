@@ -1,0 +1,22 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-glossary ui-narrow">
+      <nav class="mi-crumbs" aria-label="Breadcrumb"><a href="#learn">Learn</a><span aria-hidden="true">/</span><span>Glossary</span></nav>
+      <div class="ui-page-head">
+        <div>
+          <anvil-component type="Label" name="title" prop:text="Glossary" prop:role='["page-title"]'></anvil-component>
+          <anvil-component type="Label" name="count" prop:role='["fine-print"]'></anvil-component>
+        </div>
+      </div>
+      <label class="ui-field gl-search"><span class="ui-sr">Find a term</span>
+        <anvil-component type="TextBox" name="search_box" prop:placeholder="Find a term: duration, alpha, contango..." prop:type="search"></anvil-component>
+      </label>
+      <anvil-component type="RepeatingPanel" name="terms_panel" prop:item_template="Master_Investor.Items.TermRow" prop:role='["term-list", "gl-list"]'></anvil-component>
+      <div class="ui-empty" anvil:name="empty">
+        <i class="ic ic-search"></i>
+        <h2>No term matches</h2>
+        <p>Try fewer letters, or <a href="#learn">search the lessons</a> instead.</p>
+      </div>
+    </div>
+  </anvil-block>
+</anvil-form>

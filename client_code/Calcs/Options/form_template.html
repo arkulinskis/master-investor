@@ -1,0 +1,31 @@
+<div class="cx">
+  <p class="cx-intro">Profit or loss at expiry for one option position, per contract (100 shares by default), after the premium.</p>
+  <div class="cx-grid">
+    <div class="cx-inputs">
+      <div class="cx-pair">
+        <label class="ui-field cx-field"><span>Type</span><anvil-component type="DropDown" name="type_drop" prop:items='["Call", "Put"]'></anvil-component></label>
+        <label class="ui-field cx-field"><span>Position</span><anvil-component type="DropDown" name="side_drop" prop:items='["Buy (long)", "Sell (short)"]'></anvil-component></label>
+      </div>
+      <label class="ui-field cx-field"><span>Strike price</span>
+        <anvil-component type="TextBox" name="strike_box" prop:text="100" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Premium per share</span>
+        <anvil-component type="TextBox" name="premium_box" prop:text="5" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Shares per contract</span>
+        <anvil-component type="TextBox" name="size_box" prop:text="100" prop:role='["cx-num"]'></anvil-component>
+      </label>
+    </div>
+    <div class="cx-out">
+      <anvil-component type="Label" name="msg" prop:role='["msg-error"]' prop:visible="false"></anvil-component>
+      <div class="mi-sheet cx-sheet" anvil:name="out_box">
+        <div class="mi-sheet-head"><span>Option payoff at expiry</span><span>Result</span></div>
+        <anvil-component type="RepeatingPanel" name="out_panel" prop:item_template="Master_Investor.Items.SheetRow" prop:role='["sheet-rows"]'></anvil-component>
+      </div>
+    </div>
+  </div>
+  <div class="cx-chart">
+    <anvil-component type="Label" name="chart_title" prop:role='["cx-chart-title"]'></anvil-component>
+    <anvil-component type="Master_Investor.Components.LineChart" name="chart"></anvil-component>
+  </div>
+</div>

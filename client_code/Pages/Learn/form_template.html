@@ -1,0 +1,54 @@
+<anvil-form layout="Master_Investor.Layouts.Shell">
+  <anvil-block slot="content">
+    <div class="ui-wrap page-learn">
+      <div class="ui-page-head">
+        <div>
+          <anvil-component type="Label" name="title" prop:text="Learn" prop:role='["page-title"]'></anvil-component>
+          <anvil-component type="Label" name="totals" prop:role='["fine-print"]'></anvil-component>
+        </div>
+        <div class="ln-search">
+          <label class="ui-field ln-search-field"><span class="ui-sr">Search the lessons</span>
+            <anvil-component type="TextBox" name="search_box" prop:placeholder="Search lessons: WACC, duration, pairs..." prop:type="search"></anvil-component>
+          </label>
+          <anvil-component type="Button" name="search_button" prop:text="Search" prop:role='["btn", "btn-icon", "ic-search"]'></anvil-component>
+        </div>
+      </div>
+
+      <div class="ln-next ui-card" anvil:name="next_box">
+        <div class="ln-next-text">
+          <anvil-component type="Label" name="next_kicker" prop:text="Pick up where you left off" prop:role='["ln-next-k"]'></anvil-component>
+          <anvil-component type="Label" name="next_title" prop:role='["ln-next-title"]'></anvil-component>
+        </div>
+        <anvil-component type="Button" name="next_button" prop:text="Continue" prop:role='["btn", "btn-primary", "ic-arrow"]'></anvil-component>
+      </div>
+
+      <div anvil:name="browse_part">
+        <div class="ln-tools">
+          <div class="ui-seg" role="group" aria-label="Filter tracks by level">
+            <anvil-component type="Button" name="lv_all" prop:text="All levels" prop:role='["seg", "on"]'></anvil-component>
+            <anvil-component type="Button" name="lv_beginner" prop:text="Beginner" prop:role='["seg"]'></anvil-component>
+            <anvil-component type="Button" name="lv_intermediate" prop:text="Intermediate" prop:role='["seg"]'></anvil-component>
+            <anvil-component type="Button" name="lv_advanced" prop:text="Advanced" prop:role='["seg"]'></anvil-component>
+            <anvil-component type="Button" name="lv_pro" prop:text="Pro" prop:role='["seg"]'></anvil-component>
+          </div>
+          <a class="ln-place" href="#practice/placement"><i class="ic ic-target"></i>Not sure where to start? Take the 12-card placement check</a>
+        </div>
+        <anvil-component type="RepeatingPanel" name="tracks_panel" prop:item_template="Master_Investor.Items.TrackCard" prop:role='["track-grid"]'></anvil-component>
+        <p class="ln-more muted">Also here: the <a href="#glossary">glossary</a> of every key term, the <a href="#library">library</a> of data sources and GitHub repositories, and <a href="#tools">seven calculators</a>.</p>
+      </div>
+
+      <div anvil:name="search_part">
+        <div class="ui-row between ln-results-head">
+          <anvil-component type="Label" name="results_label" prop:role='["sec-title"]'></anvil-component>
+          <anvil-component type="Button" name="clear_button" prop:text="Back to all tracks" prop:role='["btn", "btn-ghost", "ic-back"]'></anvil-component>
+        </div>
+        <anvil-component type="RepeatingPanel" name="results_panel" prop:item_template="Master_Investor.Items.LessonRow" prop:role='["lesson-list"]'></anvil-component>
+        <div class="ui-empty" anvil:name="no_results">
+          <i class="ic ic-search"></i>
+          <h2>No lesson mentions that</h2>
+          <p>Try a shorter word, or look it up in the <a href="#glossary">glossary</a>.</p>
+        </div>
+      </div>
+    </div>
+  </anvil-block>
+</anvil-form>
