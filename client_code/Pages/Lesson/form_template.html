@@ -12,6 +12,10 @@
             </div>
             <anvil-component type="Label" name="title" prop:role='["ls-title"]'></anvil-component>
             <anvil-component type="Label" name="summary" prop:role='["ls-lead"]'></anvil-component>
+            <div class="ls-share">
+              <anvil-component type="Button" name="share_button" prop:text="Share lesson" prop:role='["btn", "btn-sm", "btn-ghost", "ic-share"]'></anvil-component>
+              <a class="small" href="/lessons" anvil:name="public_link" target="_blank" rel="noopener">Open the public page</a>
+            </div>
           </header>
           <anvil-component type="RichText" name="body" prop:format="markdown" prop:enable_slots="false" prop:role='["ls-body"]'></anvil-component>
 

@@ -25,7 +25,7 @@
     log.push((w > vw + 1 ? 'WIDE ' : 'ok   ') + hash + ' (' + w + ')');
   }
   try {
-    for (const h of ['#landing', '#auth', '#auth/signup', '#learn', '#track/valuation', '#lesson/dcf', '#practice', '#practice/mixed', '#tools/dcf', '#tools/options', '#library', '#library/repos', '#glossary']) await check(h);
+    for (const h of ['#landing', '#auth', '#auth/signup', '#learn', '#track/valuation', '#lesson/dcf', '#practice', '#practice/mixed', '#tools/dcf', '#tools/options', '#tools/compound', '#tools/crash', '#lesson/spotting-hype', '#practice/lesson/spotting-hype', '#library', '#library/repos', '#glossary']) await check(h);
     // sign up so the member pages can be checked too
     location.hash = '#auth/signup';
     await until(() => window.UI_READY && $$('.au-card input').length >= 3, 'sign-up form');

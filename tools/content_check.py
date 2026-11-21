@@ -27,7 +27,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "server_code"))
 
 LEVELS = {"Beginner", "Intermediate", "Advanced", "Pro"}
-CALCS = {"compound", "dcf", "position", "kelly", "bond", "options", "sharpe"}
+CALCS = {"compound", "dcf", "position", "kelly", "bond", "options", "sharpe", "crash"}
 problems = []
 
 

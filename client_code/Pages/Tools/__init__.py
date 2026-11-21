@@ -12,6 +12,7 @@ CALCS = {
     "sharpe": ("Sharpe, Sortino and drawdown", "risk-metrics", "Measuring risk"),
     "position": ("Position size from your stop", "risk-per-trade", "Risk per trade"),
     "kelly": ("Kelly bet size", "position-sizing", "Position sizing"),
+    "crash": ("Crash rehearsal: hold or sell?", "behaviour", "Your brain on markets"),
 }
 
 
@@ -34,18 +35,22 @@ def _make(key):
     if key == "position":
         from ...Calcs.Position import Position
         return Position()
+    if key == "crash":
+        from ...Calcs.Crash import Crash
+        return Crash()
     from ...Calcs.Kelly import Kelly
     return Kelly()
 
 
 class Tools(ToolsTemplate):
-    """#tools/<calc>: seven calculators, one at a time (each a Form in Calcs/, made when first opened)."""
+    """#tools/<calc>: eight calculators, one at a time (each a Form in Calcs/, made when first opened)."""
 
     def __init__(self, args=(), **properties):
         super().__init__(**properties)
         state.heading(self.title, 1)
         self._buttons = {"compound": self.t_compound, "dcf": self.t_dcf, "bond": self.t_bond, "options": self.t_options,
-                         "sharpe": self.t_sharpe, "position": self.t_position, "kelly": self.t_kelly}
+                         "sharpe": self.t_sharpe, "position": self.t_position, "kelly": self.t_kelly,
+                         "crash": self.t_crash}
         for key, b in self._buttons.items():
             b.tag.key = key
             b.add_event_handler("click", self._tab_click)

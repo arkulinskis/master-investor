@@ -1,0 +1,55 @@
+<div class="cx cr">
+  <p class="cx-intro">Live through a real stretch of US market history one year at a time. The chart stops at the worst moment and asks what you'd do. Decide first, then see what happened next.</p>
+  <div class="cr-presets" role="group" aria-label="Famous falls">
+    <span class="cr-presets-k">Famous falls:</span>
+    <anvil-component type="Button" name="p_1929" prop:text="1929 crash" prop:role='["seg"]'></anvil-component>
+    <anvil-component type="Button" name="p_1973" prop:text="1973 oil shock" prop:role='["seg"]'></anvil-component>
+    <anvil-component type="Button" name="p_2000" prop:text="2000 dot-com" prop:role='["seg"]'></anvil-component>
+    <anvil-component type="Button" name="p_2007" prop:text="2008 crisis" prop:role='["seg"]'></anvil-component>
+    <anvil-component type="Button" name="p_2021" prop:text="2022 rate shock" prop:role='["seg"]'></anvil-component>
+  </div>
+  <div class="cx-grid">
+    <div class="cx-inputs">
+      <div class="cx-pair">
+        <label class="ui-field cx-field"><span>Start year</span>
+          <anvil-component type="TextBox" name="year_box" prop:text="2007" prop:role='["cx-num"]'></anvil-component>
+        </label>
+        <label class="ui-field cx-field"><span>Years</span>
+          <anvil-component type="TextBox" name="years_box" prop:text="10" prop:role='["cx-num"]'></anvil-component>
+        </label>
+      </div>
+      <label class="ui-field cx-field"><span>Stocks, % (the rest in bonds)</span>
+        <anvil-component type="TextBox" name="stocks_box" prop:text="100" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">100 = all S&amp;P 500, 60 = a classic 60/40 mix, 0 = all 10-year Treasury bonds. Put back to your split every year.</span>
+      </label>
+      <label class="ui-field cx-field"><span>Amount at the start</span>
+        <anvil-component type="TextBox" name="amount_box" prop:text="10000" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <anvil-component type="Button" name="random_button" prop:text="Try a random year" prop:role='["btn", "btn-sm", "ic-dice"]'></anvil-component>
+    </div>
+    <div class="cx-out">
+      <anvil-component type="Label" name="msg" prop:role='["msg-error"]' prop:visible="false"></anvil-component>
+      <div class="cr-ask" anvil:name="ask_box">
+        <anvil-component type="Label" name="ask_text" prop:role='["cr-ask-text"]'></anvil-component>
+        <anvil-component type="Label" name="ask_sub" prop:role='["fine-print"]'></anvil-component>
+        <div class="cr-choice">
+          <anvil-component type="Button" name="hold_button" prop:text="Hold" prop:role='["btn", "btn-primary", "ic-check"]'></anvil-component>
+          <anvil-component type="Button" name="cash_button" prop:text="Move to cash" prop:role='["btn", "ic-bank"]'></anvil-component>
+        </div>
+      </div>
+      <div class="cr-told" anvil:name="told_box">
+        <anvil-component type="Label" name="told_text" prop:role='["cr-told-text"]'></anvil-component>
+        <anvil-component type="Label" name="told_sub" prop:role='["fine-print"]'></anvil-component>
+        <anvil-component type="Button" name="rewind_button" prop:text="Rewind to the decision" prop:role='["btn", "btn-sm", "btn-ghost", "ic-refresh"]'></anvil-component>
+      </div>
+      <div class="mi-sheet cx-sheet" anvil:name="out_box">
+        <div class="mi-sheet-head"><span>Crash rehearsal</span><span>Result</span></div>
+        <anvil-component type="RepeatingPanel" name="out_panel" prop:item_template="Master_Investor.Items.SheetRow" prop:role='["sheet-rows"]'></anvil-component>
+      </div>
+    </div>
+  </div>
+  <div class="cx-chart" anvil:name="chart_box">
+    <anvil-component type="Label" name="chart_title" prop:role='["cx-chart-title"]'></anvil-component>
+    <anvil-component type="Master_Investor.Components.LineChart" name="chart"></anvil-component>
+  </div>
+  <p class="cr-fine small muted">US data: S&amp;P 500 with dividends reinvested, 10-year Treasury bonds and 3-month Treasury bills. Year-end values only, so falls inside a year look smaller than they felt. Before fees, taxes and inflation. Numbers as published by Aswath Damodaran, NYU Stern, <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html" target="_blank" rel="noopener">Historical Returns for the US</a> (updated January 5, 2026). One slice of the past, not a forecast. Education only, not advice.</p>
+</div>

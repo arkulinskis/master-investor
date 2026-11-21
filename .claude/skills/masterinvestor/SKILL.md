@@ -7,7 +7,8 @@ description: Context, workflow and recipes for Master Investor (folder master-in
 
 **What it is:** a free learning app for investing, from first-time savers to working traders. Core loop: read a short
 lesson -> answer its cards in your head -> Reveal -> Got it / Not yet -> cards come back on a spaced-repetition schedule.
-Areas: Learn (9 tracks, 54 lessons, 432 cards), Practice (decks + placement check), Calculators (7), Library (data
+Areas: Learn (9 tracks, 55 lessons, 441 cards), Practice (decks + placement check + Hype check), Calculators (8, incl.
+the crash rehearsal), public lesson pages (/lessons), Library (data
 sources, GitHub repos, books), Glossary, Today (member dashboard). Everything but progress-saving works for guests.
 
 **Where it lives:**
@@ -147,6 +148,22 @@ tools/                     check.py, assets.py, build_icons.py, make_icons.py, u
   change both together.
 - **Charts**: `theme/assets/mi-chart.js` (`MIChart.draw(el, json)`: line/area series, marks, zero line, CSS-variable
   colours so theme switches apply live) wrapped by `Components/LineChart` (`.show_spec(dict)`).
+- **Crash rehearsal** (`#tools/crash`, `Calcs/Crash`): data in `client_code/history_data.py` = Damodaran's "Historical
+  Returns for the US" (S&P 500 incl. dividends, 3-month T-bill, 10-year T-bond, 1928 to 2025, updated 2026-01-05),
+  copied exactly; check 2008 = -36.55 / 1.40 / 20.10. Each January Damodaran adds a year: regenerate the dict from
+  histretSP.html (first table, columns 1/3/4), keep the credit in the page's fine print. Decision point = the deepest
+  year-end low before the last year (else the weakest year); cash = T-bills from there. Any input change hides the
+  outcome again. Educational framing only: it reports what happened, never says what to do.
+- **Fee box** (Calcs/Compound): monthly `value * (1 + rm) * (1 - fee) ** (1/12)` plus a no-fee pass; fee 0 hides the
+  fee rows and the dashed line. 100,000 at 4% for 20 years: 1% fee 179,213, 0.25% fee 208,413 (SEC bulletin: about
+  179,000 and 208,000).
+- **Public lesson pages** (`server_code/LessonPages.py`): `@anvil.server.route("/lessons")` and
+  `("/lessons/:lesson_id")`, plain HTML from `Curriculum.index()` + its own escaped `md()` (only the subset
+  content_check allows), cards as `<details>`, LearningResource + BreadcrumbList JSON-LD, unknown id = 404. The paths
+  are `sitemap_extra` in APP_MAKER/seo/apps/masterinvestor.json: a new lesson = add its path there and rerun
+  `seo.py all masterinvestor --push`. The Lesson page's Share button shares that public URL.
+- **Hype check**: lesson `spotting-hype` (end of tr_foundations), cards are fictional social posts; Practice's
+  `hype_button` starts `#practice/lesson/spotting-hype` (`HYPE_LESSON`).
 - **Landing hero**: `Components/SheetHero`, a static spreadsheet whose answer cell is a Reveal button (CSS row
   stagger with `--ease-expo`, reduced motion = fade).
 

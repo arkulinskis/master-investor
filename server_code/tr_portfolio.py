@@ -446,7 +446,7 @@ On these assumptions, selling the loser is the better decision on both the thesi
                 ("Why judge decisions by your reasoning rather than the outcome?", "Good decisions can lose money and bad ones can win by luck. A decision journal lets you check whether your reasoning held up, which is what you can improve."),
                 ("True or false: knowing about biases is enough to avoid them.", "False. Awareness helps a little, but biases act in the moment. Rules, checklists and automation set in advance work far better."),
             ],
-            "calc": None,
+            "calc": "crash",
             "links": [],
         },
     ],

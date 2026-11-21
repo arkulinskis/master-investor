@@ -540,5 +540,85 @@ Your average cost is below the average price because the fixed 300 bought more u
                 ("Investor.gov: Save and invest", "https://www.investor.gov/introduction-investing/investing-basics/save-and-invest"),
             ],
         },
+        # ------------------------------------------------------------------
+        {
+            "id": "spotting-hype",
+            "title": "Spotting hype and too-good-to-be-true offers",
+            "level": "Beginner",
+            "minutes": 7,
+            "summary": "The red flags in investing posts and pitches: guaranteed returns, urgency, unregistered sellers, paid promotion and pump and dump schemes.",
+            "body": """
+Social media is full of people selling investing ideas. Some are honest and some are useful, but surveys by investor protection bodies keep finding the same pattern: people who lean on online influencers tend to rate their own knowledge highly, score lower on basic quizzes and report more brushes with fraud. The defence is not to memorise every scam. It is to recognise a handful of red flags that almost every scam shares.
+
+### The six red flags
+
+- **Guaranteed returns.** Every real investment can lose money. "Guaranteed", "no risk" or "can't lose" next to a high return is the single clearest warning sign.
+- **Returns that are too high or too smooth.** A steady 2% to 5% a week, every week, does not exist in real markets. Stock markets have averaged roughly 10% a year over the long run, with painful falls along the way.
+- **Urgency and scarcity.** "Only 12 spots left", "price doubles at midnight", "DM me now". Pressure is there to stop you checking.
+- **Unregistered sellers.** People who sell investments or give paid advice usually have to be registered with a regulator. A real firm can be looked up in a public register; a scammer often has only a nickname and a messaging app.
+- **Paid promotion you can't see.** Influencers are often paid to push a coin, a stock or a trading course. Many countries require a clear disclosure, but plenty of posts skip it.
+- **Cherry-picked proof.** A screenshot of one winning trade, a rented sports car, a profit chart with no dates or no losses. You see the wins they chose to show, never the full record.
+
+### Pump and dump
+
+A classic scheme: promoters quietly buy a tiny, thinly traded stock or token, hype it to their followers, then sell into the buying rush. The price collapses and the last buyers are left holding the loss. Signs include a company or coin you have never heard of, huge claims with no filings behind them, and a push to buy right now.
+
+### A 30-second check
+
+1. Can it lose money? If they say no, walk away.
+2. Who is selling, and are they registered? Look them up yourself, not through a link they send.
+3. Are they paid to promote it?
+4. What would you see if you asked for the full record, losses included?
+
+> Rule of thumb: the more a post makes you feel you'll miss out, the slower you should go.
+""",
+            "example": {
+                "title": "Worked example: what 3% a week really means",
+                "body": """
+A post promises "a safe 3% a week". Compounded over a year:
+
+- 1.03^52 = about **4.65**, so 1,000 becomes about 4,650 in one year.
+- After two years: 1.03^104 = about **21.6**, so 1,000 becomes about 21,600.
+- After five years, 1,000 would grow to more than 2 million.
+
+If anyone could really do this, they would be one of the richest people alive within a decade and would have no need to sell spots in a chat group. Compare that with the stock market's long-run average of roughly 10% a year, which turns 1,000 into about 1,100 after one year, with some years down 20% or more.
+
+The maths alone tells you the promise is false. No chart, testimonial or screenshot can change that.
+""",
+            },
+            "terms": [
+                ("Pump and dump", "A scheme where promoters hype a small stock or token they already own, then sell to the buyers they attracted, leaving them with the losses."),
+                ("Ponzi scheme", "A fraud that pays earlier investors with money from newer investors instead of from real profits, and collapses when new money dries up."),
+                ("Finfluencer", "A social media personality who talks about money and investing, sometimes paid to promote products without saying so."),
+                ("Paid promotion", "Content someone was paid to publish. Many countries require it to be clearly labelled as an advert or sponsorship."),
+                ("Registration check", "Looking up a seller or adviser in a regulator's public register, such as FINRA BrokerCheck in the US, before trusting them with money."),
+            ],
+            "cards": [
+                ("A post from \"@WealthWizardKai\": \"Guaranteed 3% a week with my trading signals. 12 spots left, DM me today!\" What are the red flags?",
+                 "Guaranteed returns (no real investment is guaranteed), an impossible return (3% a week is about 365% a year), and urgency plus scarcity (12 spots, today). Also an unknown seller who wants you in private messages, away from public scrutiny."),
+                ("\"@MoonshotMaya\": \"$GLEAMCOIN is about to explode, 100x incoming! I just loaded up, get in before the announcement tomorrow!\" Red flags?",
+                 "A pump and dump pattern: a little-known token, a huge promised gain, the promoter already holding it and urgency tied to a vague announcement. If the hype works, early holders sell to the late buyers and the price falls."),
+                ("A video shows a trader beside a sports car with a screenshot of a 48,000 profit. \"My course shows you how. Only 499 this week.\" What is wrong with this as proof?",
+                 "Cherry-picked proof: one winning trade with no full record, no losses and no dates. The car may be rented. The real business may be selling the course, and a discount that ends this week is urgency."),
+                ("\"Join our investment club. Members earn 20% a month, paid on time every time, and you get a bonus for each friend you bring.\" Red flags?",
+                 "Returns that are far too high and far too smooth, plus rewards for recruiting. Paying old members with new members' money is how a Ponzi scheme works; it collapses when recruiting slows."),
+                ("A finance influencer posts: \"Honest review: QuickGrow Pro is the only app I trust with my money.\" There is no ad label. What should you ask?",
+                 "Whether it is paid promotion. Many countries require sponsored posts to be clearly labelled, but undisclosed deals are common. Look for an ad label or a disclosure, and treat glowing reviews with no downsides as marketing."),
+                ("\"I'm a licensed broker with 20 years at a top bank. Send funds to my personal wallet and I'll manage them for you.\" How do you check?",
+                 "Look the person up yourself in the regulator's public register, such as FINRA BrokerCheck in the US or the FCA register in the UK, not through a link they send. A real firm never asks you to send money to a personal account or wallet."),
+                ("\"Tiny company Northwind Lithium is about to sign a deal with a huge carmaker. Buy before Monday!\" The stock trades a few thousand shares a day. Red flags?",
+                 "A thinly traded tiny stock, an exciting rumour with no filing or official news behind it, and a deadline. That is the classic set up for a pump and dump. Check the company's official filings and press releases first."),
+                ("A friend forwards: \"Bot trading AI, zero risk, you can withdraw any time, returns of 1% a day.\" Which words give it away?",
+                 "\"Zero risk\" and \"1% a day\". No real investment has zero risk, and 1% a day compounds to about 37 times your money in a year. Fake trading platforms often show growing balances on screen but block or delay withdrawals."),
+                ("A post says: \"Last year my picks returned 212%. Subscribe for this year's picks.\" What would you want to see before believing it?",
+                 "The full record: every pick, with dates, entry and exit prices and the losers, ideally audited or at least public in advance. Big claimed returns with no complete, checkable history are cherry picking or simply made up."),
+            ],
+            "calc": None,
+            "links": [
+                ("FINRA: social media influenced investing", "https://www.finra.org/rules-guidance/key-topics/fintech/report/social-media-influenced-investing"),
+                ("FINRA BrokerCheck: look up a broker", "https://brokercheck.finra.org/"),
+                ("Investor.gov: protect your investments", "https://www.investor.gov/"),
+            ],
+        },
     ],
 }

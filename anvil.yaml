@@ -1,36 +1,5 @@
 allow_embedding: false
 db_schema:
-  error_log:
-    client: none
-    columns:
-    - admin_ui: {order: 0, width: 200}
-      name: when
-      type: datetime
-    - admin_ui: {order: 1, width: 120}
-      name: source
-      type: string
-    - admin_ui: {order: 2, width: 160}
-      name: kind
-      type: string
-    - admin_ui: {order: 3, width: 300}
-      name: message
-      type: string
-    - admin_ui: {order: 4, width: 300}
-      name: traceback
-      type: string
-    - admin_ui: {order: 5, width: 200}
-      name: page
-      type: string
-    - admin_ui: {order: 6, width: 120}
-      name: session
-      type: string
-    - admin_ui: {order: 7, width: 200}
-      name: user
-      target: users
-      type: link_single
-    indexes: []
-    server: full
-    title: Error log
   app_settings:
     client: none
     columns:
@@ -94,6 +63,53 @@ db_schema:
     indexes: []
     server: full
     title: Card reviews
+  error_log:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      name: when
+      type: datetime
+    - admin_ui:
+        order: 1
+        width: 120
+      name: source
+      type: string
+    - admin_ui:
+        order: 2
+        width: 160
+      name: kind
+      type: string
+    - admin_ui:
+        order: 3
+        width: 300
+      name: message
+      type: string
+    - admin_ui:
+        order: 4
+        width: 300
+      name: traceback
+      type: string
+    - admin_ui:
+        order: 5
+        width: 200
+      name: page
+      type: string
+    - admin_ui:
+        order: 6
+        width: 120
+      name: session
+      type: string
+    - admin_ui:
+        order: 7
+        width: 200
+      name: user
+      target: users
+      type: link_single
+    indexes: []
+    server: full
+    title: Error log
   feedback:
     client: none
     columns:
@@ -322,13 +338,14 @@ db_schema:
     server: full
     title: Users
 metadata:
-  description: "Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting, with reveal-the-answer cards and calculators."
-  logo_img: "asset:icon-512.png"
-  title: "Master Investor: learn investing, from first fund to quant"
+  description: 'Free investing lessons from beginner to quant: valuing companies, DCF, data sources, risk, trading and backtesting,
+    with reveal-the-answer cards and calculators.'
+  logo_img: asset:icon-512.png
+  title: 'Master Investor: learn investing, from first fund to quant'
 name: Master Investor
 native_deps:
   head_html: |
-    <script src="_/theme/legal-kit.js?v=b6f7442cb0"></script>
+    <script src="_/theme/legal-kit.js?v=527ba64fc9"></script>
     <!-- seo:start (APP_MAKER/seo: edit seo/apps/masterinvestor.json and run seo.py, not here) -->
     <link rel="canonical" href="https://master-investor.anvil.app/">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -384,9 +401,9 @@ native_deps:
 
     <!-- Prepsto feedback panel: every "Submit feedback" link and button opens it (it is the only feedback channel). No floating button, no cookies, nothing loads until it is opened. Codes: APP_MAKER/prepsto-links.json -->
     <script src="https://prepsto.com/_/theme/widget.js" data-prepsto="cumg2kz" data-button="false" data-label="Submit feedback" async></script>
-    <link rel="stylesheet" href="_/theme/icons.css?v=3920bc0261">
-    <link rel="stylesheet" href="_/theme/app.css?v=eea4effa26">
-    <script src="_/theme/app-kit.js?v=ef34f51eb6"></script>
+    <link rel="stylesheet" href="_/theme/icons.css?v=b389cdb57a">
+    <link rel="stylesheet" href="_/theme/app.css?v=b88c1186e5">
+    <script src="_/theme/app-kit.js?v=8e1e91a7ee"></script>
     <script src="_/theme/mi-chart.js?v=4ff093bfca"></script>
 package_name: Master_Investor
 runtime_options:

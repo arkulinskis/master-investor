@@ -8,6 +8,7 @@ from ... import router, state
 
 LEVELS = ["Beginner", "Intermediate", "Advanced", "Pro"]
 COLS = "ABCDEFGH"
+HYPE_LESSON = "spotting-hype"  # the Hype check deck: made-up social posts, the reveal names the red flags
 
 
 class Practice(PracticeTemplate):
@@ -197,6 +198,10 @@ class Practice(PracticeTemplate):
     @handle("placement_button", "click")
     def placement_button_click(self, **event_args):
         self._start("placement")
+
+    @handle("hype_button", "click")
+    def hype_button_click(self, **event_args):
+        self._start("lesson", HYPE_LESSON)
 
     @handle("saved_button", "click")
     def saved_button_click(self, **event_args):

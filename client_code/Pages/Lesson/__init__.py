@@ -7,7 +7,7 @@ from ... import router, state
 
 CALC_NAMES = {"compound": "the compound growth calculator", "dcf": "the DCF calculator", "position": "the position size calculator",
               "kelly": "the Kelly calculator", "bond": "the bond calculator", "options": "the option payoff calculator",
-              "sharpe": "the Sharpe and Sortino calculator"}
+              "sharpe": "the Sharpe and Sortino calculator", "crash": "the crash rehearsal (hold or sell, on real history)"}
 
 
 class Lesson(LessonTemplate):
@@ -45,6 +45,7 @@ class Lesson(LessonTemplate):
         if L.get("calc"):
             state.set_attr(self.calc_link, "href", router.href("tools", L["calc"]))
             self.calc_label.text = "Try the numbers yourself in " + CALC_NAMES.get(L["calc"], "the calculators")
+        state.set_attr(self.public_link, "href", "/lessons/" + L["id"])
         self.terms_panel.items = L["terms"]
         self.links_box.visible = bool(L["links"])
         self.links_panel.items = L["links"]
@@ -86,6 +87,26 @@ class Lesson(LessonTemplate):
     def reveal_all_button_click(self, **event_args):
         self._open = not self._open
         self._draw_cards()
+
+    @handle("share_button", "click")
+    def share_button_click(self, **event_args):
+        """The lesson's public page (/lessons/<id>, readable without the app): the phone's share sheet where there
+        is one, otherwise the link goes to the clipboard, otherwise it's shown to copy by hand."""
+        url = window.location.origin + "/lessons/" + self._L["id"]
+        nav = window.navigator
+        if getattr(nav, "share", None):
+            try:
+                nav.share({"title": self._L["title"] + " · Master Investor", "text": self._L["summary"], "url": url})
+                return
+            except Exception as e:
+                if "AbortError" in str(e) or "abort" in str(e).lower():
+                    return  # they closed the share sheet
+        try:
+            nav.clipboard.writeText(url)
+            state.toast("Link copied: " + url, "ok")
+        except Exception:
+            box = TextBox(text=url)
+            alert(box, title="Copy this link", buttons=[("Done", True)])
 
     @handle("practice_button", "click")
     def practice_button_click(self, **event_args):

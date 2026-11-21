@@ -1,5 +1,5 @@
 <div class="cx">
-  <p class="cx-intro">What a starting sum plus a monthly amount grows to, compounding monthly, and what that is worth in today's money after inflation.</p>
+  <p class="cx-intro">What a starting sum plus a monthly amount grows to, compounding monthly, what the yearly fee takes along the way, and what the result is worth in today's money after inflation.</p>
   <div class="cx-grid">
     <div class="cx-inputs">
       <label class="ui-field cx-field"><span>Starting amount</span>
@@ -13,6 +13,9 @@
       </label>
       <label class="ui-field cx-field"><span>Years</span>
         <anvil-component type="TextBox" name="years_box" prop:text="25" prop:role='["cx-num"]'></anvil-component>
+      </label>
+      <label class="ui-field cx-field"><span>Yearly fee, %</span>
+        <anvil-component type="TextBox" name="fee_box" prop:text="0.5" prop:role='["cx-num"]'></anvil-component><span class="ui-hint">A fund's expense ratio plus any adviser or platform fee. Taken from the whole balance every year.</span>
       </label>
       <label class="ui-field cx-field"><span>Inflation, % a year</span>
         <anvil-component type="TextBox" name="infl_box" prop:text="2.5" prop:role='["cx-num"]'></anvil-component>
